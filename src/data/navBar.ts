@@ -1,6 +1,6 @@
-import { NavBarTypes } from '@/types/NavBarTypes'
+import { navItemTypes } from '@/types/navItemTypes'
 
-const navBar: NavBarTypes = {
+export const navBar: { [language: string]: navItemTypes[] } = {
     br: [
         {
             id: 1,
@@ -28,7 +28,7 @@ const navBar: NavBarTypes = {
             title: 'Contato',
         },
     ],
-    us: [
+    en: [
         {
             id: 1,
             href: '#home',
@@ -56,5 +56,3 @@ const navBar: NavBarTypes = {
         },
     ],
 }
-
-export { navBar }

@@ -26,10 +26,11 @@ body {
 }
 
 /*? Tamanho máximo da página padrão */
-.w-defaut {
+.w-default {
     width: min(1500px, 96%);
     margin: 0 auto;
 }
+
 
 /*!Scroll costumizado */
 ::-webkit-scrollbar {

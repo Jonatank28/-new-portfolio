@@ -1,9 +1,9 @@
 import React from 'react'
 
-const presentation = () => {
+const Presentation = () => {
     return (
         <section>
-            <div className="w-defaut h-[calc(100vh-68px)] flex flex-col sm:flex-row">
+            <div className="w-default h-[calc(100vh-68px)] flex flex-col sm:flex-row">
                 <div className="w-full sm:w-1/2 flex justify-center items-center">
                     <div className="text-6xl">
                         <h1>Olá tudo bem,</h1>
@@ -23,4 +23,4 @@ const presentation = () => {
     )
 }
 
-export default presentation
+export default Presentation

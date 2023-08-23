@@ -18,7 +18,7 @@ const Desktop = () => {
         <header
             className={`bg-secondary py-5 duration-300 ease-out delay-100 transform shadow-md `}
         >
-            <div className="w-defaut flex items-center justify-between">
+            <div className="w-default flex items-center justify-between">
                 <a className="text-lg" href="#home">
                     Logo
                 </a>
