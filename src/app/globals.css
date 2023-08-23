@@ -2,25 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap');
-
-@layer base {
-    body {
-        font-family: 'Montserrat', 'Inter', sans-serif;
-    }
+body {
+    overflow-x: hidden;
 }
 
-/* Temas */
+/* Light theme */
 :root {
-    --bg-primary: #fff;
+    --bg-primary: #F2F2F2;
+    --bg-secondary: #EAEAEA;
+    --text-primary: #0D0D0D;
+    --text-secondary: #4F5259;
+    --decoration: green;
 }
 
+/* Dark theme */
 .dark {
-    --bg-primary: #0E0E10;
+    --bg-primary: #121212;
+    --bg-secondary: #1F1F1F;
+    --text-primary: #E1E1E1;
+    --text-secondary: #EAEAEA;
+    --decoration: #FCA5A5;
+    --decoration: #03DAC5;
 }
-
 
 /*? Tamanho máximo da página padrão */
 .w-defaut {
     width: min(1500px, 96%);
+    margin: 0 auto;
 }
+
+/*!Scroll costumizado */
+::-webkit-scrollbar {
+    width: 0.2rem;
+    heigth: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--decoration);
+    border-radius: 1rem;
+}
+
+::-webkit-scroll-track {
+    background-color: transparent;
+}
+
+/* fontSize: {
+    sm: '14px', // pouco destaque
+    base: '16px', // Base
+    lg: '18px', // SubTitulo
+    2xl: '20px', // Titulo
+    '6xl': '60px' // Titulo Apresentation
+}, */
