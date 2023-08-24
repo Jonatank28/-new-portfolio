@@ -22,7 +22,7 @@ const Desktop = () => {
                 <a className="text-lg" href="#home">
                     Logo
                 </a>
-                <ul className="flex items-center gap-6 text-lg">
+                <ul className="flex items-center gap-8 text-lg">
                     {navBar[language as 'br' | 'us'].map((item) => (
                         <li
                             onClick={() => handleClickItem(item.id)}
@@ -31,7 +31,12 @@ const Desktop = () => {
                                 menuSelect === item.id ? 'text-decoration' : ''
                             }`}
                         >
-                            <Link href={item.href}>{item.title}</Link>
+                            <Link
+                                href={item.href}
+                                className="text-base font-light "
+                            >
+                                {item.title}
+                            </Link>
                         </li>
                     ))}
                     <ThemeSwitcher className="" />

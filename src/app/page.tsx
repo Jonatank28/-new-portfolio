@@ -11,10 +11,12 @@ export default function Home() {
     return (
         <main className="w-screen h-screen text-6xl font-bold">
             <Header />
-            <Presentation />
-            <About />
-            <Projects />
-            <Footer />
+            <div className="flex flex-col gap-[200px]">
+                <Presentation />
+                <About />
+                <Projects />
+                <Footer />
+            </div>
             {/* // Menu fixo que fica ao lado esquerdo inferior */}
             <FixedContacts />
         </main>

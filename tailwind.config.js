@@ -20,8 +20,7 @@ module.exports = {
             },
             fontFamily: {
                 poppins: ['var(--font-poppins)'],
-                roboto: ['var(--font-roboto)'],
-                inter: ['var(--font-inter)'],
+                montserrat: ['var(--font-montserrat)'],
             },
         },
     },

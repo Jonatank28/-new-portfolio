@@ -1,7 +1,7 @@
 import { aboutTypes } from '@/types/aboutTypes'
 
 export const about: { [language: string]: aboutTypes } = {
-    br: {
+    pt: {
         t1: 'Sobre mim.',
         t2: 'Desenvolvedor full stack',
         t3: `Olá! É um prazer me apresentar a vocês. Meu nome é Jonatan e sou um desenvolvedor com 8 meses de experiência em desenvolvimento. Tenho trabalhado principalmente com tecnologias como React, Node e MySQL, e estou sempre buscando aprimorar minhas habilidades nessas áreas.`,

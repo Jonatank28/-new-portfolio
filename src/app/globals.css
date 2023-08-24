@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Light theme */
@@ -20,7 +22,7 @@ body {
     --bg-primary: #121212;
     --bg-secondary: #1F1F1F;
     --text-primary: #E1E1E1;
-    --text-secondary: #EAEAEA;
+    --text-secondary: #858585;
     --decoration: #FCA5A5;
     --decoration: #03DAC5;
 }
@@ -47,10 +49,6 @@ body {
     background-color: transparent;
 }
 
-/* fontSize: {
-    sm: '14px', // pouco destaque
-    base: '16px', // Base
-    lg: '18px', // SubTitulo
-    2xl: '20px', // Titulo
-    '6xl': '60px' // Titulo Apresentation
-}, */
+.modal-open {
+    overflow: hidden;
+}

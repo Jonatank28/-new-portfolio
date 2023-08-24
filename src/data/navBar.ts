@@ -1,7 +1,7 @@
 import { navItemTypes } from '@/types/navItemTypes'
 
 export const navBar: { [language: string]: navItemTypes[] } = {
-    br: [
+    pt: [
         {
             id: 1,
             href: '#home',

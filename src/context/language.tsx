@@ -14,7 +14,7 @@ type LanguageProviderProps = {
 }
 
 const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-    const [language, setLanguage] = useState('br')
+    const [language, setLanguage] = useState('pt')
 
     const changeLanguage = (newLanguage: string) => {
         setLanguage(newLanguage)
