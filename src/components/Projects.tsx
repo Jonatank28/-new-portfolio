@@ -3,7 +3,7 @@ import { typesProject } from '@/data/typesProject'
 import { projects } from '@/data/projects'
 import { useState } from 'react'
 import { typeProjectTypes } from '@/types/typeProjectTypes'
-import Card from './Card'
+import Card from './CardProjects/page'
 
 const Projects = () => {
     const { language } = useLanguage()

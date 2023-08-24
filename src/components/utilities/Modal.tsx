@@ -46,7 +46,7 @@ const Modal = ({ isOpen, children }: Props) => {
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.5, opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="bg-secondary p-6 rounded-lg shadow-md relative z-10"
+                        className="bg-secondary p-6 rounded-lg shadow-md relative z-10 w-full"
                     >
                         <div>{children}</div>
                     </motion.div>

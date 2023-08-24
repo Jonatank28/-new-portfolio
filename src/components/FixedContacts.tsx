@@ -13,7 +13,7 @@ const FixedContacts = () => {
 
     return (
         <motion.div
-            className={`fixed bottom-4 left-20 ${
+            className={`fixed bottom-12 left-20 ${
                 hovered ? 'translate-x-7' : ''
             }`}
             onMouseEnter={handleHover}

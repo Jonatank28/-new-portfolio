@@ -1,10 +1,11 @@
 import { projectTypes } from '@/types/projectTypes'
 import { typesProject } from '@/data/typesProject'
 import useLanguage from '@/hooks/useLanguage'
-import Modal from './utilities/Modal'
+import Modal from '../utilities/Modal'
 import { useState } from 'react'
+import Content from './Content'
 
-const Card = ({ project }: { project: projectTypes }) => {
+const CardProjects = ({ project }: { project: projectTypes }) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false)
     const { language } = useLanguage()
 
@@ -45,20 +46,12 @@ const Card = ({ project }: { project: projectTypes }) => {
                     </p>
                 </div>
             </div>
+            {/* Abre ao clicar no projeto */}
             <Modal isOpen={modalOpen} onClose={handleCloseModal}>
-                <h1>{project.description}</h1>
-                {/* Botões de ação */}
-                <div>
-                    <button
-                        className="bg-red-500 p-2"
-                        onClick={handleCloseModal}
-                    >
-                        Fechar
-                    </button>
-                </div>
+                <Content handleCloseModal={handleCloseModal} data={project} />
             </Modal>
         </>
     )
 }
 
-export default Card
+export default CardProjects

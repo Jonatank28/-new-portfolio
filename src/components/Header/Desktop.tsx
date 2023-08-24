@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from 'react'
 import { navBar } from '@/data/navBar'
 import Link from 'next/link'
@@ -16,7 +17,8 @@ const Desktop = () => {
 
     return (
         <header
-            className={`bg-secondary py-5 duration-300 ease-out delay-100 transform shadow-md `}
+            className={`bg-secondary py-5 duration-300 ease-out delay-100 transform shadow-md 
+            }`}
         >
             <div className="w-default flex items-center justify-between">
                 <a className="text-lg" href="#home">
