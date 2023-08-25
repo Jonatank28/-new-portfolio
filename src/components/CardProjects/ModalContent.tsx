@@ -3,20 +3,25 @@ import { projectTypes } from '@/types/projectTypes'
 import Tag from './Tag'
 import ActionButtons from './ActionButtons'
 import Carousel from './Carousel'
+import { AiOutlineClose } from 'react-icons/ai'
 
 interface Props {
     handleCloseModal: () => void
     data: projectTypes
 }
 
-const Content = ({ handleCloseModal, data }: Props) => {
+const ModalContent = ({ handleCloseModal, data }: Props) => {
     const { language } = useLanguage()
 
     return (
         <div className="space-y-5 ">
             {/* header */}
-            <div>
+            <div className="flex items-center justify-between pb-4">
                 <h1 className="text-3xl">{data.title}</h1>
+                <AiOutlineClose
+                    className="text-2xl opacity-70 cursor-pointer hover:opacity-100 transition-all duration-100 "
+                    onClick={handleCloseModal}
+                />
             </div>
             {/* content */}
             <div className="grid grid-cols-5 gap-6">
@@ -47,11 +52,10 @@ const Content = ({ handleCloseModal, data }: Props) => {
                     </div>
                 </div>
             </div>
-            <div></div>
-            {/* Botões de ação */}
-            <ActionButtons handleCloseModal={handleCloseModal} />
+            {/* Botões de ação / Footer */}
+            <ActionButtons handleCloseModal={handleCloseModal} data={data} />
         </div>
     )
 }
 
-export default Content
+export default ModalContent

@@ -3,7 +3,7 @@ import { typesProject } from '@/data/typesProject'
 import useLanguage from '@/hooks/useLanguage'
 import Modal from '../utilities/Modal'
 import { useState } from 'react'
-import Content from './Content'
+import ModalContent from './ModalContent'
 
 const CardProjects = ({ project }: { project: projectTypes }) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false)
@@ -48,7 +48,10 @@ const CardProjects = ({ project }: { project: projectTypes }) => {
             </div>
             {/* Abre ao clicar no projeto */}
             <Modal isOpen={modalOpen} onClose={handleCloseModal}>
-                <Content handleCloseModal={handleCloseModal} data={project} />
+                <ModalContent
+                    handleCloseModal={handleCloseModal}
+                    data={project}
+                />
             </Modal>
         </>
     )

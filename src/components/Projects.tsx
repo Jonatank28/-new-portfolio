@@ -20,7 +20,6 @@ const Projects = () => {
                 <h1 className="text-2xl font-bold">
                     {language === 'pt' ? 'Projetos' : 'Projects'}
                 </h1>
-                {/* Cards */}
                 <div className="space-y-8">
                     <div className="flex items-center gap-2">
                         {typesProject[language].map((type) => (
@@ -35,6 +34,7 @@ const Projects = () => {
                             </span>
                         ))}
                     </div>
+                    {/* Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {projects[language].map((project) => (
                             <Card project={project} />

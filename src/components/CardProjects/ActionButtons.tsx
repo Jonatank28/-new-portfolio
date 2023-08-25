@@ -1,19 +1,21 @@
 import React from 'react'
 import Button from '../Form/Button'
 import useLanguage from '@/hooks/useLanguage'
+import { projectTypes } from '@/types/projectTypes'
 
 interface Props {
     handleCloseModal: () => void
+    data: projectTypes
 }
 
-const ActionButtons = ({ handleCloseModal }: Props) => {
+const ActionButtons = ({ handleCloseModal, data }: Props) => {
     const { language } = useLanguage()
 
     return (
         <div className="flex justify-between">
             <div>
                 <Button
-                    className="border-red-500 text-red-400"
+                    className="border-red-500 text-red-400 hover:text-white hover:bg-red-500"
                     title={language === 'pt' ? 'Fechar' : 'Close'}
                     onClick={handleCloseModal}
                 />
@@ -22,10 +24,12 @@ const ActionButtons = ({ handleCloseModal }: Props) => {
                 <Button
                     className="bg-blue-500 border-blue-500"
                     title={language === 'pt' ? 'Repositório' : 'Repositorie'}
+                    href={data.repository}
                 />
                 <Button
                     className="bg-green-500 border-green-500"
                     title={language === 'pt' ? 'Ver Projeto' : 'View project'}
+                    href={data.link}
                 />
             </div>
         </div>
