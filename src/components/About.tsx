@@ -31,8 +31,8 @@ const About = () => {
     }, [language])
 
     return (
-        <section className="w-full" id="about">
-            <div className="flex gap-10 w-default">
+        <section className="w-full">
+            <div className="flex gap-10 w-default pt-[50px]" id="about">
                 <div className="w-1/3">
                     <img
                         src="https://github.com/Jonatank28.png"

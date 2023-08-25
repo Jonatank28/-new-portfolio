@@ -15,8 +15,8 @@ const Projects = () => {
     }
 
     return (
-        <section id="projects">
-            <div className="w-default space-y-2">
+        <section>
+            <div className="w-default space-y-2 pt-[50px]" id="projects">
                 <h1 className="text-2xl font-bold">
                     {language === 'pt' ? 'Projetos' : 'Projects'}
                 </h1>

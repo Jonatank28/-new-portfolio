@@ -22,9 +22,10 @@ const FixedContacts = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <ul className="flex flex-col gap-2">
-                {data.map((contact) => (
+            <ul className="flex flex-col gap-4">
+                {data.map((contact, index) => (
                     <motion.li
+                        className="flex flex-col justify-center items-center"
                         key={contact.id}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -33,10 +34,13 @@ const FixedContacts = () => {
                         <Link
                             href={contact.url}
                             target="_blank"
-                            className="p-3 bg-secondary rounded-full flex justify-center items-center"
+                            className="p-3 bg-secondary hover:bg-decoration hover:text-white rounded-full flex justify-center items-center mb-3"
                         >
-                            <span className="text-xl ">{contact.icon}</span>
+                            <span className="text-xl">{contact.icon}</span>
                         </Link>
+                        {index !== data.length - 1 && (
+                            <div className="h-[5px] w-[1px] bg-decoration" />
+                        )}
                     </motion.li>
                 ))}
             </ul>

@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <main className="w-screen h-screen text-6xl font-bold">
             <Header />
-            <div className="flex flex-col gap-[200px]">
+            <div className="flex flex-col gap-[150px]">
                 <Presentation />
                 <About />
                 <Projects />

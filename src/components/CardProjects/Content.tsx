@@ -2,7 +2,7 @@ import useLanguage from '@/hooks/useLanguage'
 import { projectTypes } from '@/types/projectTypes'
 import Tag from './Tag'
 import ActionButtons from './ActionButtons'
-import CarrocelIamages from './CarrocelIamage'
+import Carousel from './Carousel'
 
 interface Props {
     handleCloseModal: () => void
@@ -13,16 +13,16 @@ const Content = ({ handleCloseModal, data }: Props) => {
     const { language } = useLanguage()
 
     return (
-        <div className="space-y-5">
+        <div className="space-y-5 ">
             {/* header */}
             <div>
                 <h1 className="text-3xl">{data.title}</h1>
             </div>
             {/* content */}
             <div className="grid grid-cols-5 gap-6">
-                <div className="col-span-3">
+                <div className="col-span-3 ">
                     {/* Carrossel de imagens */}
-                    <CarrocelIamages data={data} />
+                    <Carousel data={data.imageCarousel} />
                 </div>
                 <div className="col-span-2 space-y-4">
                     <div className="space-y-1">

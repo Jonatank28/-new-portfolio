@@ -4,6 +4,7 @@ import { navBar } from '@/data/navBar'
 import Link from 'next/link'
 import ThemeSwitcher from '../utilities/ThemeSwitcher'
 import useLanguage from '@/hooks/useLanguage'
+import { navItemTypes } from '@/types/navItemTypes'
 
 const Desktop = () => {
     const { language } = useLanguage()
@@ -11,12 +12,13 @@ const Desktop = () => {
         navBar[language as 'br' | 'us'][0].id
     )
 
-    const handleClickItem = (id: number) => {
-        setMenuSelect(id)
+    const handleClickItem = (item: navItemTypes) => {
+        setMenuSelect(item.id)
     }
 
     return (
         <header
+            id="home"
             className={`bg-secondary py-5 duration-300 ease-out delay-100 transform shadow-md 
             }`}
         >
@@ -27,7 +29,7 @@ const Desktop = () => {
                 <ul className="flex items-center gap-8 text-lg">
                     {navBar[language as 'br' | 'us'].map((item) => (
                         <li
-                            onClick={() => handleClickItem(item.id)}
+                            onClick={() => handleClickItem(item)}
                             key={item.id}
                             className={`${
                                 menuSelect === item.id ? 'text-decoration' : ''
