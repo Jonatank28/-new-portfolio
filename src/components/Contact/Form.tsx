@@ -1,18 +1,61 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
+import emailjs from 'emailjs-com'
 import Input from '../Form/Input'
 import Area from '../Form/Area'
 import Button from '../Form/Button'
+import { useState } from 'react'
+
+interface FormData {
+    name: string
+    email: string
+    subject: string
+    telephone: string
+    message: string
+}
 
 const Form = () => {
+    const [sendMessage, setSendMessage] = useState<boolean>(false)
+
     const {
-        reset,
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors, isSubmitting },
     } = useForm<FormData>()
 
+    // Envia email para o email 'jonatankalmeidakk28@gmail.com'
     const onSubmit: SubmitHandler<FormData> = async (values) => {
-        console.log('🚀 ~ data:', values)
+        try {
+            await sendEmail(values)
+            setSendMessage(true)
+
+            setTimeout(() => {
+                setSendMessage(false)
+            }, 4000)
+        } catch (error) {
+            console.error('Erro ao enviar o e-mail:', error)
+        }
+    }
+
+    // Função para enviar o e-mail com o serviço do EmailJS
+    const sendEmail = async (values: FormData) => {
+        try {
+            await emailjs.send(
+                'service_k21iesm',
+                'template_yg7habx',
+                {
+                    from_name: values.name,
+                    from_email: values.email,
+                    subject: values.subject,
+                    telephone: values.telephone,
+                    message: values.message,
+                },
+                'HGj7UBc6tZzJNEO9g'
+            )
+            console.log('E-mail enviado com sucesso!')
+        } catch (error) {
+            console.log('Erro ao enviar o e-mail:', error)
+            throw error
+        }
     }
 
     return (
@@ -63,7 +106,18 @@ const Form = () => {
                         placeholder="Digite sua mensagem..."
                     />
                 </div>
-                <Button title="Enviar mensagem" className="border-[#03DAC5]" />
+                <Button
+                    title={
+                        isSubmitting ? 'Enviando mensagem' : 'Enviar mensagem'
+                    }
+                    disabled={isSubmitting}
+                    className="border-[#03DAC5]"
+                />
+                {sendMessage && (
+                    <div className="bg-green-600 p-2 rounded-lg">
+                        <p>Mensagem enviada com sucesso!</p>
+                    </div>
+                )}
             </div>
         </form>
     )
