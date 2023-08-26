@@ -19,14 +19,14 @@ const ScrollToTop = () => {
         })
     }
     return (
-        <div className="top-to-btm">
-            {showTopBtn && (
+        showTopBtn && (
+            <div className="bg-secondary rounded-lg p-2 fixed bottom-4 right-4 cursor-pointer">
                 <FaAngleUp
-                    className="icon-position icon-style"
+                    className="text-3xl text-decoration"
                     onClick={goToTop}
                 />
-            )}
-        </div>
+            </div>
+        )
     )
 }
 export default ScrollToTop

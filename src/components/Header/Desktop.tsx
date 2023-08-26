@@ -5,6 +5,8 @@ import Link from 'next/link'
 import ThemeSwitcher from '../utilities/ThemeSwitcher'
 import useLanguage from '@/hooks/useLanguage'
 import { navItemTypes } from '@/types/navItemTypes'
+import Logo from './Logo'
+import LanguageSwitcher from '../utilities/LanguageSwitcher'
 
 const Desktop = () => {
     const { language } = useLanguage()
@@ -23,9 +25,7 @@ const Desktop = () => {
             }`}
         >
             <div className="w-default flex items-center justify-between">
-                <a className="text-lg" href="#home">
-                    Logo
-                </a>
+                <Logo />
                 <ul className="flex items-center gap-8 text-lg">
                     {navBar[language as 'br' | 'us'].map((item) => (
                         <li
@@ -44,6 +44,7 @@ const Desktop = () => {
                         </li>
                     ))}
                     <ThemeSwitcher className="" />
+                    <LanguageSwitcher />
                 </ul>
             </div>
         </header>
