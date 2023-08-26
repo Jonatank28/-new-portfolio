@@ -1,5 +1,6 @@
 import React from 'react'
 import InputMask from 'react-input-mask'
+import useLanguage from '@/hooks/useLanguage'
 
 interface Props {
     register: any
@@ -20,6 +21,8 @@ const Input = ({
     required,
     placeholder,
 }: Props) => {
+    const { language } = useLanguage()
+
     return (
         <div className="w-full">
             {mask ? (
@@ -47,7 +50,9 @@ const Input = ({
             {errors[name] && (
                 <div className="text-red-500 text-xs pt-1">
                     {required && errors[name].type === 'required'
-                        ? 'Campo obrigatório'
+                        ? language === 'pt'
+                            ? 'Campo obrigatório'
+                            : 'Required field'
                         : null}
                 </div>
             )}

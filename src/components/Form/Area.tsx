@@ -1,3 +1,5 @@
+import useLanguage from '@/hooks/useLanguage'
+
 interface Props {
     register: any
     errors: any
@@ -7,6 +9,8 @@ interface Props {
 }
 
 const Area = ({ errors, register, name, required, placeholder }: Props) => {
+    const { language } = useLanguage()
+
     return (
         <div className="w-full">
             <textarea
@@ -18,9 +22,11 @@ const Area = ({ errors, register, name, required, placeholder }: Props) => {
                 placeholder={placeholder}
             />
             {errors[name] && (
-                <div className="text-red-500 text-xs">
+                <div className="text-red-500 text-xs ">
                     {required && errors[name].type === 'required'
-                        ? 'Campo obrigatório'
+                        ? language === 'pt'
+                            ? 'Campo obrigatório'
+                            : 'Required field'
                         : null}
                 </div>
             )}

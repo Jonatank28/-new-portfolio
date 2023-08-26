@@ -4,6 +4,7 @@ import Input from '../Form/Input'
 import Area from '../Form/Area'
 import Button from '../Form/Button'
 import { useState } from 'react'
+import useLanguage from '@/hooks/useLanguage'
 
 interface FormData {
     name: string
@@ -12,28 +13,46 @@ interface FormData {
     telephone: string
     message: string
 }
+interface SendMessage {
+    message: string
+    sucess: boolean
+}
 
 const Form = () => {
-    const [sendMessage, setSendMessage] = useState<boolean>(false)
+    const [sendMessage, setSendMessage] = useState<SendMessage | null>(null)
+    const { language } = useLanguage()
 
     const {
         register,
+        reset,
         handleSubmit,
         formState: { errors, isSubmitting },
     } = useForm<FormData>()
 
-    // Envia email para o email 'jonatankalmeidakk28@gmail.com'
+    // Envia email para: 'jonatankalmeidakk28@gmail.com'
     const onSubmit: SubmitHandler<FormData> = async (values) => {
         try {
             await sendEmail(values)
-            setSendMessage(true)
-
-            setTimeout(() => {
-                setSendMessage(false)
-            }, 4000)
+            reset()
+            setSendMessage({
+                message:
+                    language === 'pt'
+                        ? 'Mensagem enviada com sucesso!'
+                        : 'Message sent successfully!',
+                sucess: true,
+            })
         } catch (error) {
-            console.error('Erro ao enviar o e-mail:', error)
+            setSendMessage({
+                message:
+                    language === 'pt'
+                        ? 'Erro ao enviar a mensagem, tente novamente!'
+                        : 'Error sending message, please try again!',
+                sucess: false,
+            })
         }
+        setTimeout(() => {
+            setSendMessage(null)
+        }, 4000)
     }
 
     // Função para enviar o e-mail com o serviço do EmailJS
@@ -51,16 +70,18 @@ const Form = () => {
                 },
                 'HGj7UBc6tZzJNEO9g'
             )
-            console.log('E-mail enviado com sucesso!')
         } catch (error) {
-            console.log('Erro ao enviar o e-mail:', error)
             throw error
         }
     }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="text-lg">Me mande uma mensagem</h1>
+            <h1 className="text-lg">
+                {language === 'pt'
+                    ? 'Me mande uma mensagem'
+                    : 'Send me a message'}{' '}
+            </h1>
             <div className="space-y-4 pt-8">
                 <div className="flex gap-4">
                     <Input
@@ -69,7 +90,7 @@ const Form = () => {
                         name="name"
                         type="string"
                         required
-                        placeholder="Nome"
+                        placeholder={language === 'pt' ? 'Nome' : 'Name'}
                     />
                     <Input
                         errors={errors}
@@ -86,7 +107,7 @@ const Form = () => {
                         register={register}
                         type="string"
                         name="subject"
-                        placeholder="Assunto"
+                        placeholder={language === 'pt' ? 'Assunto' : 'Subject'}
                     />
                     <Input
                         errors={errors}
@@ -94,7 +115,9 @@ const Form = () => {
                         type="text"
                         mask
                         name="telephone"
-                        placeholder="Telefone"
+                        placeholder={
+                            language === 'pt' ? 'Telefone' : 'Telephone'
+                        }
                     />
                 </div>
                 <div>
@@ -103,19 +126,34 @@ const Form = () => {
                         register={register}
                         required
                         name="message"
-                        placeholder="Digite sua mensagem..."
+                        placeholder={
+                            language === 'pt'
+                                ? 'Digite sua mensagem...'
+                                : 'Type your message...'
+                        }
                     />
                 </div>
                 <Button
                     title={
-                        isSubmitting ? 'Enviando mensagem' : 'Enviar mensagem'
+                        isSubmitting
+                            ? language === 'pt'
+                                ? 'Enviando mensagem'
+                                : 'Sending message'
+                            : language === 'pt'
+                            ? 'Enviar mensagem'
+                            : 'Send message'
                     }
                     disabled={isSubmitting}
                     className="border-[#03DAC5]"
                 />
+                {/* Mensagem de envio de email */}
                 {sendMessage && (
-                    <div className="bg-green-600 p-2 rounded-lg">
-                        <p>Mensagem enviada com sucesso!</p>
+                    <div
+                        className={`${
+                            sendMessage.sucess ? 'bg-green-600' : 'bg-red-600'
+                        }  p-2 rounded-lg text-sm`}
+                    >
+                        <p>{sendMessage.message}</p>
                     </div>
                 )}
             </div>
