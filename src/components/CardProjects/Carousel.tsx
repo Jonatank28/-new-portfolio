@@ -32,7 +32,7 @@ const Carousel = ({ data }: Props) => {
             {data.map((image, index) => (
                 <SwiperSlide key={index}>
                     <img
-                        className="h-[60vh] object-cover"
+                        className="h-[35vh] md:h-[60vh] object-cover"
                         src={image}
                         alt={`Image ${index}`}
                     />

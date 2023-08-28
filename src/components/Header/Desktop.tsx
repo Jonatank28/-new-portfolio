@@ -43,7 +43,7 @@ const Desktop = () => {
                             </Link>
                         </li>
                     ))}
-                    <ThemeSwitcher className="" />
+                    <ThemeSwitcher className="bg-primary shadow-lg p-2 rounded-lg" />
                     <LanguageSwitcher />
                 </ul>
             </div>

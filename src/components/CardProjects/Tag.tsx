@@ -4,7 +4,7 @@ interface Props {
 
 const Tag = ({ title }: Props) => {
     return (
-        <div className="text-sm bg-decoration p-2 rounded-lg text-black/60">
+        <div className="text-xs md:text-sm bg-decoration p-1 md:p-2 rounded-lg text-black/60">
             {title}
         </div>
     )

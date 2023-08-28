@@ -36,13 +36,13 @@ const About = () => {
                 className="grid grid-cols-3 gap-10 w-default pt-[50px]"
                 id="about"
             >
-                <div className="col-span-1">
+                <div className="col-span-3 md:col-span-1">
                     <img
                         src="https://github.com/Jonatank28.png"
                         alt="Foto de perfil do github"
                     />
                 </div>
-                <div className="col-span-2 space-y-5">
+                <div className="col-span-3 md:col-span-2 space-y-5">
                     <div className="">
                         <h1 className="text-2xl font-extrabold">
                             {about[language].t1}

@@ -12,11 +12,11 @@ const Contact = () => {
                     {language === 'pt' ? 'Contato' : 'Contact'}
                 </h1>
                 <div className="grid grid-cols-2 gap-10">
-                    <div className="col-span-1">
-                        <Links />
-                    </div>
-                    <div className="col-span-1">
+                    <div className="col-span-2 md:col-span-1">
                         <Form />
+                    </div>
+                    <div className="col-span-2 md:col-span-1">
+                        <Links />
                     </div>
                 </div>
             </div>

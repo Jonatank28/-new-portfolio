@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <main>
             <Header />
-            <div className="flex flex-col gap-[150px]">
+            <div className="flex flex-col md:gap-[150px]">
                 <Presentation />
                 <About />
                 <Projects />

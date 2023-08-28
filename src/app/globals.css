@@ -29,7 +29,7 @@ body {
 
 /*? Tamanho máximo da página padrão */
 .w-default {
-    width: min(1500px, 96%);
+    width: min(1500px, 92%);
     margin: 0 auto;
 }
 

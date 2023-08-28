@@ -83,7 +83,7 @@ const Form = () => {
                     : 'Send me a message'}{' '}
             </h1>
             <div className="space-y-4 pt-8">
-                <div className="flex gap-4">
+                <div className="flex flex-col md:flex-row gap-4">
                     <Input
                         errors={errors}
                         register={register}
@@ -101,7 +101,7 @@ const Form = () => {
                         placeholder="Email"
                     />
                 </div>
-                <div className="flex gap-4">
+                <div className="flex flex-col md:flex-row gap-4">
                     <Input
                         errors={errors}
                         register={register}
@@ -133,19 +133,21 @@ const Form = () => {
                         }
                     />
                 </div>
-                <Button
-                    title={
-                        isSubmitting
-                            ? language === 'pt'
-                                ? 'Enviando mensagem'
-                                : 'Sending message'
-                            : language === 'pt'
-                            ? 'Enviar mensagem'
-                            : 'Send message'
-                    }
-                    disabled={isSubmitting}
-                    className="border-[#03DAC5]"
-                />
+                <div className="w-full text-right">
+                    <Button
+                        title={
+                            isSubmitting
+                                ? language === 'pt'
+                                    ? 'Enviando mensagem'
+                                    : 'Sending message'
+                                : language === 'pt'
+                                ? 'Enviar mensagem'
+                                : 'Send message'
+                        }
+                        disabled={isSubmitting}
+                        className="border-[#03DAC5] bg-[#03DAC5] text-secondary"
+                    />
+                </div>
                 {/* Mensagem de envio de email */}
                 {sendMessage && (
                     <div
