@@ -4,9 +4,10 @@ import { navBar } from '@/data/navBar'
 import Link from 'next/link'
 import ThemeSwitcher from '../utilities/ThemeSwitcher'
 import useLanguage from '@/hooks/useLanguage'
-import { navItemTypes } from '@/types/navItemTypes'
+
 import Logo from './Logo'
 import LanguageSwitcher from '../utilities/LanguageSwitcher'
+import { navItemTypes } from '@/types/navItemTypes'
 
 interface Props {
     handleClickItem: (item: navItemTypes) => void
