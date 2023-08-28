@@ -1,4 +1,6 @@
-export const navBar: {} = {
+import { navItemTypes } from '@/types/navItemTypes'
+
+export const navBar: { [language: string]: navItemTypes[] } = {
     pt: [
         {
             id: 1,

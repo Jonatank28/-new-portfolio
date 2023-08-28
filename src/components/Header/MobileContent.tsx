@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 import { navBar } from '@/data/navBar'
 import Link from 'next/link'
 import useLanguage from '@/hooks/useLanguage'
+import { navItemTypes } from '@/types/navItemTypes'
 
 interface Props {
     mobileOpen: boolean
     setMobileOpen: React.Dispatch<React.SetStateAction<boolean>>
     handleClickMenu: () => void
-    //@ts-ignore
-    handleClickItem: (item) => void
+    handleClickItem: (item: navItemTypes) => void
     menuSelect: string
 }
 

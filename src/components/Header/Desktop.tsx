@@ -7,10 +7,10 @@ import useLanguage from '@/hooks/useLanguage'
 
 import Logo from './Logo'
 import LanguageSwitcher from '../utilities/LanguageSwitcher'
+import { navItemTypes } from '@/types/navItemTypes'
 
 interface Props {
-    //@ts-ignore
-    handleClickItem: (item) => void
+    handleClickItem: (item: navItemTypes) => void
     menuSelect: string
     setMenuSelect: React.Dispatch<React.SetStateAction<number>>
 }

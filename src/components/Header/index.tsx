@@ -2,6 +2,7 @@
 import { navBar } from '@/data/navBar'
 import { useState, useEffect, lazy, Suspense } from 'react'
 import useLanguage from '@/hooks/useLanguage'
+import { navItemTypes } from '@/types/navItemTypes'
 
 const Desktop = lazy(() => import('./Desktop'))
 const Mobile = lazy(() => import('./Mobile'))
@@ -18,8 +19,7 @@ const Header = () => {
     }
 
     // Atualiza o item ativo
-    //@ts-ignore
-    const handleClickItem = (item) => {
+    const handleClickItem = (item: navItemTypes) => {
         setMenuSelect(item.id)
     }
 
