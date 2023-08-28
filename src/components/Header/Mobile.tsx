@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react'
 import { FaBars } from 'react-icons/fa'
 import MobileContent from './MobileContent'
-import { navItemTypes } from '@/types/navItemTypes'
 
 interface Props {
-    handleClickItem: (item: navItemTypes) => void
+    //@ts-ignore
+    handleClickItem: (item) => void
     menuSelect: string
 }
 
