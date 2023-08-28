@@ -14,7 +14,7 @@ export default function Home() {
         <main>
             <Header />
             <div className="flex flex-col md:gap-[150px]">
-                <Presentation />
+                {/* <Presentation /> */}
                 <About />
                 <Projects />
                 <Contact />
