@@ -1,4 +1,3 @@
-'use client'
 import useLanguage from '@/hooks/useLanguage'
 import { apresentation } from '@/data/apresentation'
 
@@ -19,7 +18,7 @@ const Presentation = () => {
                     <img
                         className="w-[900px]"
                         src="bgPresentation.svg"
-                        alt=""
+                        alt="imagem"
                     />
                 </div>
             </div>
