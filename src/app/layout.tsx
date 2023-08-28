@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import { LanguageProvider } from '@/context/language'
