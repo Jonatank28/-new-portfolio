@@ -20,7 +20,6 @@ module.exports = {
             },
             fontFamily: {
                 poppins: ['var(--font-poppins)'],
-                montserrat: ['var(--font-montserrat)'],
             },
         },
     },
