@@ -10,12 +10,12 @@ export const typesProject: { [language: string]: typeProjectTypes[] } = {
         {
             id: 2,
             title: 'Sistemas',
-            color: 'green',
+            color: '#BFDBFE',
         },
         {
             id: 3,
             title: 'subSistemas',
-            color: 'orange',
+            color: '#FEF08A',
         },
     ],
     en: [

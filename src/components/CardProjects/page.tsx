@@ -15,10 +15,12 @@ const CardProjects = ({ project }: { project: projectTypes }) => {
 
     const handleOpenModal = () => {
         setModalOpen(true)
+        document.documentElement.classList.add('overflow-hidden')
     }
 
     const handleCloseModal = () => {
         setModalOpen(false)
+        document.documentElement.classList.remove('overflow-hidden')
     }
 
     return (
@@ -36,7 +38,7 @@ const CardProjects = ({ project }: { project: projectTypes }) => {
                 </div>
                 <div className="space-y-2">
                     <h1
-                        className={`text-base p-1 rounded-lg inline-flex `}
+                        className={`text-base p-1 rounded-lg inline-flex  text-secondary`}
                         style={{ backgroundColor: projectType?.color }}
                     >
                         {projectType?.title}

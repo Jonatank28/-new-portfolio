@@ -49,6 +49,6 @@ body {
     background-color: transparent;
 }
 
-.modal-open {
+.overflow-hidden {
     overflow: hidden;
 }

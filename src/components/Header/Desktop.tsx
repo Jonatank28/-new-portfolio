@@ -8,15 +8,14 @@ import { navItemTypes } from '@/types/navItemTypes'
 import Logo from './Logo'
 import LanguageSwitcher from '../utilities/LanguageSwitcher'
 
-const Desktop = () => {
-    const { language } = useLanguage()
-    const [menuSelect, setMenuSelect] = useState(
-        navBar[language as 'br' | 'us'][0].id
-    )
+interface Props {
+    handleClickItem: (item: navItemTypes) => void
+    menuSelect: string
+    setMenuSelect: React.Dispatch<React.SetStateAction<number>>
+}
 
-    const handleClickItem = (item: navItemTypes) => {
-        setMenuSelect(item.id)
-    }
+const Desktop = ({ handleClickItem, menuSelect, setMenuSelect }: Props) => {
+    const { language } = useLanguage()
 
     return (
         <header
@@ -27,12 +26,14 @@ const Desktop = () => {
             <div className="w-default flex items-center justify-between">
                 <Logo />
                 <ul className="flex items-center gap-8 text-lg">
-                    {navBar[language as 'br' | 'us'].map((item) => (
+                    {navBar[language].map((item) => (
                         <li
                             onClick={() => handleClickItem(item)}
                             key={item.id}
                             className={`${
-                                menuSelect === item.id ? 'text-decoration' : ''
+                                Number(menuSelect) === item.id
+                                    ? 'text-decoration'
+                                    : ''
                             }`}
                         >
                             <Link
