@@ -1,7 +1,7 @@
 'use client'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
-import { LanguageProvider } from '@/context/language'
+// import { LanguageProvider } from '@/context/language'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
@@ -26,7 +26,9 @@ export default function RootLayout({
                 className={`${poppins.variable} font-poppins bg-primary text-primary duration-300 ease-out delay-100 transition-all`}
             >
                 <ThemeProvider attribute="class">
-                    <LanguageProvider>{children}</LanguageProvider>
+                    {/* <LanguageProvider> */}
+                    {children}
+                    {/* </LanguageProvider> */}
                 </ThemeProvider>
             </body>
         </html>

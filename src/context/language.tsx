@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import { createContext, useState, ReactNode } from 'react'
 
 export type LanguageContextType = {
