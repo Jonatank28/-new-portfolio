@@ -1,3 +1,4 @@
+'use client'
 import useLanguage from '@/hooks/useLanguage'
 import { apresentation } from '@/data/apresentation'
 

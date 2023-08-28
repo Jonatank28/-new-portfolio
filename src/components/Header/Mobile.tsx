@@ -27,7 +27,7 @@ const Mobile = ({ handleClickItem, menuSelect }: Props) => {
     return (
         <>
             <FaBars
-                className="absolute top-4 right-4 text-2xl"
+                className="absolute top-4 right-4 text-2xl cursor-pointer"
                 onClick={handleClickMenu}
             />
             <MobileContent
