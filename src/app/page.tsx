@@ -7,7 +7,6 @@ import FixedContacts from '@/components/FixedContacts'
 import About from '@/components/About'
 import ScrollToTop from '@/components/utilities/ScrollToTop'
 import Contact from '@/components/Contact/page'
-import Presentation from '@/components/Presentation'
 
 export default function Home() {
     return (
