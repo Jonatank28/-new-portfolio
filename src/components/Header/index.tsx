@@ -1,8 +1,8 @@
 'use client'
 import { navBar } from '@/data/navBar'
-import { navItemTypes } from '@/types/navItemTypes'
 import { useState, useEffect, lazy, Suspense } from 'react'
 import useLanguage from '@/hooks/useLanguage'
+import { navItemTypes } from '@/types/navItemTypes'
 
 const Desktop = lazy(() => import('./Desktop'))
 const Mobile = lazy(() => import('./Mobile'))
