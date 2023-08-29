@@ -14,6 +14,10 @@ html {
     /* To prevent scrolling overflow */
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* Light theme */
 :root {
     --bg-primary: #F2F2F2;
@@ -21,6 +25,7 @@ html {
     --text-primary: #0D0D0D;
     --text-secondary: #4F5259;
     --decoration: green;
+
 }
 
 /* Dark theme */
@@ -58,41 +63,26 @@ html {
     overflow: hidden;
 }
 
-.component {
-    width: 100vw;
-    height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    /* Add this to ensure proper layout */
-    align-items: center;
-    /* Add this to vertically center the content */
-    justify-content: center;
-    /* Add this to horizontally center the content */
-}
-
-.one {
-    background-color: antiquewhite;
-}
-
-.two {
-    background-color: aqua;
-}
-
-.three {
-    background-color: aquamarine;
-}
-
-.four {
-    background-color: chocolate;
-}
-
-.five {
-    background-color: cyan;
-}
-
-#container {
-    display: flex;
-    width: 500vw;
-    margin: 0 auto;
+.scroll-section-outer {
     overflow: hidden;
+}
+
+.scroll-section-inner {
+    height: 100vh;
+    width: 400vw;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.scroll-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-section h3 {
+    text-transform: uppercase;
 }

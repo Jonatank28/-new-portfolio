@@ -1,37 +1,58 @@
-import type { NextPage } from 'next'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import { useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-const Skills: NextPage = () => {
+function Skills() {
+    const sectionRef = useRef(null)
+    const triggerRef = useRef(null)
+
     gsap.registerPlugin(ScrollTrigger)
 
     useEffect(() => {
-        const components = document.querySelectorAll('.component')
-        const container: HTMLElement = document.querySelector('#container')!
-
-        gsap.to(components, {
-            xPercent: -100 * (components.length - 1),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: container,
-                pin: true,
-                scrub: 1,
-                snap: 1 / (components.length - 1),
-                end: () => '+=' + container.offsetWidth,
-                invalidateOnRefresh: true, // This line is added
+        const pin = gsap.fromTo(
+            sectionRef.current,
+            {
+                translateX: 0,
             },
-        })
+            {
+                translateX: '-300vw',
+                ease: 'none',
+                duration: 1,
+                scrollTrigger: {
+                    trigger: triggerRef.current,
+                    start: 'top top',
+                    end: '2000 top',
+                    scrub: 0.6,
+                    pin: true,
+                },
+            }
+        )
+        return () => {
+            {
+            }
+            pin.kill()
+        }
     }, [])
 
     return (
-        <div id="container" className="container">
-            <div className="component one">Primeiro</div>
-            <div className="component two">Segundo</div>
-            <div className="component three">Terceiro</div>
-            <div className="component four">Quarto</div>
-            <div className="component five">Quinto</div>
-        </div>
+        <section className="scroll-section-outer">
+            <div ref={triggerRef}>
+                <div ref={sectionRef} className="scroll-section-inner">
+                    <div className="scroll-section bg-red-600">
+                        <h3>Section 1</h3>
+                    </div>
+                    <div className="scroll-section bg-teal-400">
+                        <h3>Section 2</h3>
+                    </div>
+                    <div className="scroll-section bg-yellow-400">
+                        <h3>Section 3</h3>
+                    </div>
+                    <div className="scroll-section bg-purple-600">
+                        <h3>Section 4</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 
