@@ -7,9 +7,8 @@ import FixedContacts from '@/components/FixedContacts'
 import About from '@/components/About'
 import ScrollToTop from '@/components/utilities/ScrollToTop'
 import Contact from '@/components/Contact/page'
-import Skills from '@/components/skills'
 import Presentation from '@/components/Presentation'
-import Skills2 from '@/components/Skills2'
+import Skills4 from '@/components/skills'
 import Skills3 from '@/components/Skills3'
 
 export default function Home() {
@@ -19,8 +18,7 @@ export default function Home() {
             <div className="flex flex-col md:gap-[150px]">
                 <Presentation />
                 <About />
-                <Skills />
-                <Skills2 />
+                <Skills4 />
                 <Skills3 />
                 <Projects />
                 <Contact />

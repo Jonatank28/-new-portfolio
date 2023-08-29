@@ -10,8 +10,6 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* overflow: hidden; */
-    /* To prevent scrolling overflow */
 }
 
 * {
@@ -63,6 +61,8 @@ html {
     overflow: hidden;
 }
 
+
+/* Animação de scroll horizontal */
 .scroll-section-outer {
     overflow: hidden;
 }
@@ -88,6 +88,8 @@ html {
 }
 
 
+
+/* Animação de slides de tecnologias */
 @keyframes slide {
     from {
         transform: translateX(0);
@@ -95,6 +97,16 @@ html {
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes slideReverse {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
     }
 }
 
@@ -133,7 +145,12 @@ html {
 
 .logos-slide {
     display: inline-block;
-    animation: 140s slide infinite linear;
+    animation: 120s slide infinite linear;
+}
+
+.logos-slideReverse {
+    display: inline-block;
+    animation: 120s slideReverse infinite linear;
 }
 
 .logo-item {
