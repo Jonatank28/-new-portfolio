@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-    overflow-x: hidden;
+
+
+body,
+html {
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* overflow: hidden; */
+    /* To prevent scrolling overflow */
 }
 
 /* Light theme */
@@ -52,16 +58,41 @@ body {
     overflow: hidden;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
+.component {
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    /* Add this to ensure proper layout */
+    align-items: center;
+    /* Add this to vertically center the content */
+    justify-content: center;
+    /* Add this to horizontally center the content */
 }
 
-.paused {
-    animation-play-state: paused;
+.one {
+    background-color: antiquewhite;
+}
+
+.two {
+    background-color: aqua;
+}
+
+.three {
+    background-color: aquamarine;
+}
+
+.four {
+    background-color: chocolate;
+}
+
+.five {
+    background-color: cyan;
+}
+
+#container {
+    display: flex;
+    width: 500vw;
+    margin: 0 auto;
+    overflow: hidden;
 }
