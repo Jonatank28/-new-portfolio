@@ -9,6 +9,7 @@ import ScrollToTop from '@/components/utilities/ScrollToTop'
 import Contact from '@/components/Contact/page'
 import Skills from '@/components/skills'
 import Presentation from '@/components/Presentation'
+import Skills2 from '@/components/Skills2'
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
                 <Presentation />
                 <About />
                 <Skills />
+                <Skills2 />
                 <Projects />
                 <Contact />
                 <Footer />
