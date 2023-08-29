@@ -39,8 +39,16 @@ function Skills() {
             <div ref={triggerRef}>
                 <div ref={sectionRef} className="scroll-section-inner">
                     <div className="scroll-section bg-red-600">
-                        <h3>Section 1</h3>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/RK93m-yxGDk?autoplay=1"
+                            title="Video 2"
+                            frameBorder="0"
+                            allowFullScreen
+                        ></iframe>
                     </div>
+
                     <div className="scroll-section bg-teal-400">
                         <h3>Section 2</h3>
                     </div>
