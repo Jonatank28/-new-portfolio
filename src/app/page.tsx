@@ -10,6 +10,7 @@ import Contact from '@/components/Contact/page'
 import Skills from '@/components/skills'
 import Presentation from '@/components/Presentation'
 import Skills2 from '@/components/Skills2'
+import Skills3 from '@/components/Skills3'
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
                 <About />
                 <Skills />
                 <Skills2 />
+                <Skills3 />
                 <Projects />
                 <Contact />
                 <Footer />

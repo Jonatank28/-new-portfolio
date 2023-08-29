@@ -1,19 +1,5 @@
-'use client'
+import { technologies } from '@/data/technologies'
 import React, { Component } from 'react'
-
-const technologies: string[] = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Next',
-    'Styled Components',
-    'Tailwind',
-    'Node.js',
-    'Nest',
-    'MySql',
-    'PostgreSQL',
-]
 
 interface Skills2State {
     isPaused: boolean
@@ -21,7 +7,7 @@ interface Skills2State {
     totalItemsNeeded: number
 }
 
-class Skills2 extends Component<{}, Skills2State> {
+class Skills3 extends Component<{}, Skills2State> {
     constructor(props: {}) {
         super(props)
         this.state = {
@@ -41,14 +27,12 @@ class Skills2 extends Component<{}, Skills2State> {
     }
 
     updateItemsPerScreen = () => {
-        if (typeof window !== 'undefined') {
-            const itemsPerScreen = Math.ceil(window.innerWidth / 150)
-            const totalItemsNeeded = itemsPerScreen * 3
-            this.setState({
-                itemsPerScreen,
-                totalItemsNeeded,
-            })
-        }
+        const itemsPerScreen = Math.ceil(window.innerWidth / 150)
+        const totalItemsNeeded = itemsPerScreen * 3
+        this.setState({
+            itemsPerScreen,
+            totalItemsNeeded,
+        })
     }
 
     toggleAnimation = () => {
@@ -58,10 +42,10 @@ class Skills2 extends Component<{}, Skills2State> {
     }
 
     render() {
-        const { isPaused, totalItemsNeeded } = this.state
+        const { isPaused, itemsPerScreen } = this.state
 
         const repeatedTechnologies = Array.from(
-            { length: totalItemsNeeded },
+            { length: this.state.totalItemsNeeded },
             (_, index) => technologies[index % technologies.length]
         )
 
@@ -74,7 +58,11 @@ class Skills2 extends Component<{}, Skills2State> {
                 <div className={`logos-slide ${isPaused ? 'paused' : ''}`}>
                     {repeatedTechnologies.map((tech, index) => (
                         <div key={index} className="logo-item">
-                            {tech}
+                            <img
+                                className="w-20 h-20"
+                                src={`tecs/${tech}`}
+                                alt="logo da tecnologia"
+                            />
                         </div>
                     ))}
                 </div>
@@ -83,4 +71,4 @@ class Skills2 extends Component<{}, Skills2State> {
     }
 }
 
-export default Skills2
+export default Skills3
