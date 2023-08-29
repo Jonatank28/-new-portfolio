@@ -37,7 +37,7 @@ const Projects = () => {
                     {/* Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {projects[language].map((project) => (
-                            <Card project={project} />
+                            <Card project={project} key={project.id} />
                         ))}
                     </div>
                 </div>

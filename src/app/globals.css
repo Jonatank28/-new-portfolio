@@ -21,10 +21,9 @@ body {
 .dark {
     --bg-primary: #121212;
     --bg-secondary: #1F1F1F;
+    --decoration: #03DAC5;
     --text-primary: #E1E1E1;
     --text-secondary: #858585;
-    --decoration: #FCA5A5;
-    --decoration: #03DAC5;
 }
 
 /*? Tamanho máximo da página padrão */
@@ -51,4 +50,18 @@ body {
 
 .overflow-hidden {
     overflow: hidden;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.paused {
+    animation-play-state: paused;
 }

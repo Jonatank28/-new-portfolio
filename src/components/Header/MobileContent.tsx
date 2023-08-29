@@ -4,6 +4,9 @@ import { navBar } from '@/data/navBar'
 import Link from 'next/link'
 import useLanguage from '@/hooks/useLanguage'
 import { navItemTypes } from '@/types/navItemTypes'
+import ThemeSwitcher from '../utilities/ThemeSwitcher'
+import LanguageSwitcher from '../utilities/LanguageSwitcher'
+import Logo from './Logo'
 
 interface Props {
     mobileOpen: boolean
@@ -39,9 +42,16 @@ const MobileContent = ({
                 }`}
             >
                 <div className="space-y-12">
-                    <div>
-                        <span>Logo</span>
+                    <div className="flex justify-between items-center">
+                        <div>
+                            <Logo />
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <ThemeSwitcher className="" />
+                            <LanguageSwitcher />
+                        </div>
                     </div>
+
                     <div className="space-y-6">
                         {navBar[language].map((item) => (
                             <div

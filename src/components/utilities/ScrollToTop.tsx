@@ -20,7 +20,7 @@ const ScrollToTop = () => {
     }
     return (
         showTopBtn && (
-            <div className="bg-secondary rounded-lg p-2 fixed bottom-4 right-4 cursor-pointer">
+            <div className="bg-secondary rounded-lg p-2 fixed bottom-4 right-4 cursor-pointer ">
                 <FaAngleUp
                     className="text-3xl text-decoration"
                     onClick={goToTop}

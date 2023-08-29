@@ -1,3 +1,4 @@
+'use client'
 import { about } from '@/data/about'
 import useLanguage from '@/hooks/useLanguage'
 import { useEffect, useState } from 'react'

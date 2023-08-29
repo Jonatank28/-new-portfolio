@@ -7,6 +7,7 @@ import FixedContacts from '@/components/FixedContacts'
 import About from '@/components/About'
 import ScrollToTop from '@/components/utilities/ScrollToTop'
 import Contact from '@/components/Contact/page'
+import Skills from '@/components/skills'
 import Presentation from '@/components/Presentation'
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
             <div className="flex flex-col md:gap-[150px]">
                 <Presentation />
                 <About />
+                <Skills />
                 <Projects />
                 <Contact />
                 <Footer />

@@ -1,19 +1,19 @@
+import React from 'react'
 import useLanguage from '@/hooks/useLanguage'
+import Logo from './Header/Logo'
 
 const Footer = () => {
     const { language } = useLanguage()
 
     return (
         <footer className="bg-secondary py-8">
-            <div className="container mx-auto text-center text-secondary text-xs">
+            <div className="flex justify-center gap-2 items-center text-secondary text-xs">
+                <p>&copy; {new Date().getFullYear()}</p>
+                <Logo />
                 <p>
-                    &copy; {new Date().getFullYear()}{' '}
                     {language === 'pt'
-                        ? `Seu Nome. Todos os
-                        direitos reservados.
-                    `
-                        : `Your name. All the
-                    rights reserved.`}
+                        ? 'Todos os direitos reservados.'
+                        : 'All the rights reserved.'}
                 </p>
             </div>
         </footer>

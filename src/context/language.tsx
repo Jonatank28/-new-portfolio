@@ -15,9 +15,16 @@ type LanguageProviderProps = {
 }
 
 const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-    const [language, setLanguage] = useState('pt')
+    const storedLanguage =
+        typeof window !== 'undefined' ? localStorage.getItem('language') : null
+    const languageToSet = storedLanguage ?? 'pt'
+
+    const [language, setLanguage] = useState(languageToSet)
 
     const changeLanguage = (newLanguage: string) => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('language', newLanguage)
+        }
         setLanguage(newLanguage)
     }
 

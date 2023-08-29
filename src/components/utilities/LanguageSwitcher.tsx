@@ -6,10 +6,14 @@ const LanguageSwitcher = () => {
     return (
         <div>
             <button
-                className="bg-primary shadow-lg p-2 rounded-lg"
+                className="bg-primary shadow-lg p-[6px] rounded-lg"
                 onClick={() => changeLanguage(newLanguage)}
             >
-                {language === 'pt' ? 'en' : 'pt'}
+                {language === 'pt' ? (
+                    <img src="usa.png" className="w-6 h-6" alt="" />
+                ) : (
+                    <img src="brazil.png" className="w-6 h-6" alt="" />
+                )}
             </button>
         </div>
     )
