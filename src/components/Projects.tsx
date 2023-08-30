@@ -3,6 +3,7 @@ import { typesProject } from '@/data/typesProject'
 import { projects } from '@/data/projects'
 import { useState } from 'react'
 import { typeProjectTypes } from '@/types/typeProjectTypes'
+import { useSpring, animated } from 'react-spring'
 import Card from './CardProjects/page'
 
 const Projects = () => {
@@ -13,6 +14,13 @@ const Projects = () => {
     const handleClickTypeSelect = (type: typeProjectTypes) => {
         setSelectedType(type.id)
     }
+
+    const filteredProjects =
+        selectedType === 1
+            ? projects[language]
+            : projects[language].filter(
+                  (project) => project.typeID === selectedType
+              )
 
     return (
         <section>
@@ -26,8 +34,9 @@ const Projects = () => {
                             <span
                                 onClick={() => handleClickTypeSelect(type)}
                                 key={type.id}
-                                className={`text-base font-medium cursor-pointer transition-all ${
-                                    selectedType == type.id && 'text-decoration'
+                                className={`text-base cursor-pointer transition-all ${
+                                    selectedType == type.id &&
+                                    'text-decoration font-bold'
                                 }`}
                             >
                                 {type.title}
@@ -37,7 +46,7 @@ const Projects = () => {
                     {/* Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"> */}
-                        {projects[language].map((project) => (
+                        {filteredProjects.map((project) => (
                             <Card project={project} key={project.id} />
                         ))}
                     </div>
