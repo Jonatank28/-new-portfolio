@@ -5,6 +5,7 @@ import Area from '../Form/Area'
 import Button from '../Form/Button'
 import { useState } from 'react'
 import useLanguage from '@/hooks/useLanguage'
+import { useTheme } from 'next-themes'
 
 interface FormData {
     name: string
@@ -21,6 +22,8 @@ interface SendMessage {
 const Form = () => {
     const [sendMessage, setSendMessage] = useState<SendMessage | null>(null)
     const { language } = useLanguage()
+    const { resolvedTheme } = useTheme()
+    console.log('🚀 ~ resolvedTheme:', resolvedTheme)
 
     const {
         register,
@@ -134,19 +137,25 @@ const Form = () => {
                     />
                 </div>
                 <div className="w-full text-right">
-                    <Button
-                        title={
-                            isSubmitting
-                                ? language === 'pt'
-                                    ? 'Enviando mensagem'
-                                    : 'Sending message'
-                                : language === 'pt'
-                                ? 'Enviar mensagem'
-                                : 'Send message'
-                        }
-                        disabled={isSubmitting}
-                        className="border-[#03DAC5] bg-[#03DAC5] text-secondary"
-                    />
+                    {resolvedTheme && (
+                        <Button
+                            title={
+                                isSubmitting
+                                    ? language === 'pt'
+                                        ? 'Enviando mensagem'
+                                        : 'Sending message'
+                                    : language === 'pt'
+                                    ? 'Enviar mensagem'
+                                    : 'Send message'
+                            }
+                            disabled={isSubmitting}
+                            className={`${
+                                resolvedTheme === 'dark'
+                                    ? 'border-[#03DAC5] bg-[#03DAC5] text-old'
+                                    : 'border-[#653115] bg-[#653115] text-white/60'
+                            } `}
+                        />
+                    )}
                 </div>
                 {/* Mensagem de envio de email */}
                 {sendMessage && (

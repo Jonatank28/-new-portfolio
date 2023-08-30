@@ -64,7 +64,7 @@ function Skills2() {
         return () => {
             window.removeEventListener('resize', updateItemsPerScreen)
         }
-    }, []) // Empty array to run the effect only once on mount
+    }, [])
 
     const { isPaused, totalItemsNeeded, hoveredTech, hoverPosition } = state
 
@@ -83,14 +83,14 @@ function Skills2() {
                 {repeatedTechnologies.map((tech, index) => (
                     <div
                         key={index}
-                        className="logo-item flex flex-col items-center justify-center gap-1 relative"
+                        className="logo-item flex flex-col items-center justify-center gap-3 relative "
                         onMouseEnter={(event) =>
                             handleTechMouseEnter(tech, event)
                         }
                         onMouseLeave={handleTechMouseLeave}
                     >
                         <img
-                            className={`w-16 h-16 ${
+                            className={`w-12 h-12 sm:w-16 sm:h-16  ${
                                 resolvedTheme == 'dark' &&
                                 tech.name == 'Next' &&
                                 'p-1 bg-white'
@@ -99,10 +99,14 @@ function Skills2() {
                             alt="logo da tecnologia"
                         />
                         {hoveredTech === tech && hoverPosition && (
-                            <span className="text-[8px] text-primary transform-none absolute -bottom-4">
+                            <span className="text-[8px] text-primary left-[50%] translate-x-[-50%] absolute -bottom-5  hidden sm:block">
                                 {tech.name}
                             </span>
                         )}
+
+                        <p className="text-[7px] text-primary text-center sm:hidden">
+                            {tech.name}
+                        </p>
                     </div>
                 ))}
             </div>

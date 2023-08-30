@@ -33,14 +33,11 @@ const Desktop = ({ handleClickItem, menuSelect, setMenuSelect }: Props) => {
                             key={item.id}
                             className={`${
                                 Number(menuSelect) === item.id
-                                    ? 'text-decoration'
+                                    ? 'text-decoration font-bold'
                                     : ''
                             }`}
                         >
-                            <Link
-                                href={item.href}
-                                className="text-base font-light "
-                            >
+                            <Link href={item.href} className="text-base">
                                 {item.title}
                             </Link>
                         </li>

@@ -38,7 +38,7 @@ const CardProjects = ({ project }: { project: projectTypes }) => {
                 </div>
                 <div className="space-y-2">
                     <h1
-                        className={`text-base p-1 rounded-lg inline-flex  text-secondary`}
+                        className={`text-base p-1 rounded-lg inline-flex text-old`}
                         style={{ backgroundColor: projectType?.color }}
                     >
                         {projectType?.title}

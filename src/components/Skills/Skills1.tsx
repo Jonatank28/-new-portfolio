@@ -21,7 +21,7 @@ interface Skills2State {
     totalItemsNeeded: number
 }
 
-class Skills2 extends Component<{}, Skills2State> {
+class Skills1 extends Component<{}, Skills2State> {
     constructor(props: {}) {
         super(props)
         this.state = {
@@ -83,4 +83,4 @@ class Skills2 extends Component<{}, Skills2State> {
     }
 }
 
-export default Skills2
+export default Skills1

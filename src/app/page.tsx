@@ -8,8 +8,7 @@ import About from '@/components/About'
 import ScrollToTop from '@/components/utilities/ScrollToTop'
 import Contact from '@/components/Contact/page'
 import Presentation from '@/components/Presentation'
-import Skills4 from '@/components/skills'
-import Skills3 from '@/components/Skills3'
+import Skills from '@/components/Skills/page'
 
 export default function Home() {
     return (
@@ -18,8 +17,7 @@ export default function Home() {
             <div className="flex flex-col md:gap-[150px]">
                 <Presentation />
                 <About />
-                <Skills4 />
-                <Skills3 />
+                <Skills />
                 <Projects />
                 <Contact />
                 <Footer />

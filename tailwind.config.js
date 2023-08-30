@@ -16,6 +16,7 @@ module.exports = {
             textColor: {
                 primary: "var(--text-primary)",
                 secondary: "var(--text-secondary)",
+                old: "var(--text-old)",
                 decoration: "var(--decoration)",
             },
             fontFamily: {

@@ -22,7 +22,8 @@ html {
     --bg-secondary: #EAEAEA;
     --text-primary: #0D0D0D;
     --text-secondary: #4F5259;
-    --decoration: green;
+    --text-old: #292524;
+    --decoration: #653115;
 
 }
 
@@ -30,9 +31,10 @@ html {
 .dark {
     --bg-primary: #121212;
     --bg-secondary: #1F1F1F;
-    --decoration: #03DAC5;
     --text-primary: #E1E1E1;
     --text-secondary: #858585;
+    --text-old: #292524;
+    --decoration: #03DAC5;
 }
 
 /*? Tamanho máximo da página padrão */
@@ -110,6 +112,7 @@ html {
     }
 }
 
+
 .logos {
     overflow: hidden;
     padding: 50px 0;
@@ -145,7 +148,7 @@ html {
 
 .logos-slide {
     display: inline-block;
-    animation: 120s slide infinite linear;
+    animation: 30s slide linear infinite;
 }
 
 .logos-slideReverse {
@@ -159,5 +162,19 @@ html {
     font-size: 24px;
     color: var(--decoration);
     font-weight: bold;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+}
+
+@media (max-width: 640px) {
+    .logos {
+        padding: 10px 0;
+    }
+
+    .logo-item {
+        margin: 0 15px;
+    }
+
+    .logos-slide {
+        animation: 15s slide linear infinite;
+    }
 }

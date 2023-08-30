@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
-function Skills4() {
+function ScrollHorizontal() {
     const sectionRef = useRef(null)
     const triggerRef = useRef(null)
 
@@ -64,4 +64,4 @@ function Skills4() {
     )
 }
 
-export default Skills4
+export default ScrollHorizontal

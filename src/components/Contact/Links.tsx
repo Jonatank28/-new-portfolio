@@ -14,7 +14,7 @@ const Links = () => {
                     : 'Contact information'}
             </h1>
             <div className="flex flex-col gap-8 h-full mt-8 relative">
-                <div className="absolute left-[42px] top-0 w-[1px] h-full bg-secondary" />
+                <div className="absolute left-[42px] top-0 w-[1px] h-full bg-decoration" />
                 {data.map((row) => (
                     <div
                         className=" flex gap-6 items-center justify-start"
