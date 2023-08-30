@@ -9,12 +9,15 @@ import ScrollToTop from '@/components/utilities/ScrollToTop'
 import Contact from '@/components/Contact/page'
 import Presentation from '@/components/Presentation'
 import Skills from '@/components/Skills/page'
+import ParticleContainer from '@/components/ParticleContainer'
 
 export default function Home() {
     return (
         <main>
+            <ParticleContainer />
+
             <Header />
-            <div className="flex flex-col md:gap-[150px]">
+            <div className="flex flex-col md:gap-[150px] z-50">
                 <Presentation />
                 <About />
                 <Skills />

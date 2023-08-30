@@ -6,7 +6,7 @@ const Contact = () => {
     const { language } = useLanguage()
 
     return (
-        <section>
+        <section className="z-50">
             <div className="w-default space-y-2 pt-[50px]" id="contact">
                 <h1 className="text-2xl font-bold">
                     {language === 'pt' ? 'Contato' : 'Contact'}
