@@ -15,10 +15,11 @@ const CardProjects = ({ project }: { project: projectTypes }) => {
                 <div className="overflow-hidden rounded-md flex justify-center items-center w-full">
                     <img
                         src={project.image}
-                        className="object-cover object-left transform hover:scale-110 transition duration-1000 ease-in-out w-full  md:h-[300px] rounded-md"
+                        className="object-cover object-left transform hover:scale-110 transition duration-1000 ease-in-out w-full h-[300px] md:h-[300px] rounded-md"
                         alt=""
                     />
                 </div>
+
                 <div className="space-y-2">
                     <h1
                         className={`text-base p-1 rounded-lg inline-flex text-old`}

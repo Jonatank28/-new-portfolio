@@ -32,7 +32,7 @@ const About = () => {
     }, [language])
 
     return (
-        <section className="w-full z-50">
+        <section className="w-full ">
             <div
                 className="grid grid-cols-3 gap-10 w-default pt-[50px]"
                 id="about"

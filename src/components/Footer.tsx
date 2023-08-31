@@ -6,7 +6,7 @@ const Footer = () => {
     const { language } = useLanguage()
 
     return (
-        <footer className="bg-secondary py-8 z-50">
+        <footer className="bg-secondary py-8 ">
             <div className="flex justify-center gap-2 items-center text-secondary text-xs">
                 <p>&copy; {new Date().getFullYear()}</p>
                 <Logo />

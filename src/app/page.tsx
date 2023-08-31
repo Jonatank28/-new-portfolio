@@ -17,7 +17,7 @@ export default function Home() {
             <ParticleContainer />
 
             <Header />
-            <div className="flex flex-col md:gap-[150px] z-50">
+            <div className="flex flex-col md:gap-[150px] ">
                 <Presentation />
                 <About />
                 <Skills />

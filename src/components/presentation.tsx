@@ -6,7 +6,7 @@ const Presentation = () => {
     const { language } = useLanguage()
 
     return (
-        <section id="home" className="z-50">
+        <section id="home">
             <div className="w-default h-screen md:h-[calc(100vh-68px)] flex flex-col lg:flex-row">
                 <div className="w-full h-full lg:w-1/2 flex justify-center items-center pt-30">
                     <div className="text-center lg:text-start text-[40px] lg:text-6xl font-bold">

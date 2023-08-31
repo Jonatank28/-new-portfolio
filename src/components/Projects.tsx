@@ -78,8 +78,8 @@ const Projects = () => {
 
     return (
         <section>
-            <div className="w-default space-y-2 pt-[50px]" id="projects">
-                <h1 className="text-2xl font-bold">
+            <div className="w-default space-y-2 pt-[50px] " id="projects">
+                <h1 className="text-2xl font-bold z-50">
                     {language === 'pt' ? 'Projetos' : 'Projects'}
                 </h1>
                 <div className="space-y-8">
