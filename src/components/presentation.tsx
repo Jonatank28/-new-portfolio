@@ -1,6 +1,7 @@
 'use client'
 import useLanguage from '@/hooks/useLanguage'
 import { apresentation } from '@/data/apresentation'
+import { EarthCanvas } from './canvas'
 
 const Presentation = () => {
     const { language } = useLanguage()
@@ -16,11 +17,12 @@ const Presentation = () => {
                     </div>
                 </div>
                 <div className="w-full h-full lg:w-1/2 flex justify-center items-center">
-                    <img
+                    {/* <img
                         className="w-[900px]"
                         src="bgPresentation.svg"
                         alt="imagem"
-                    />
+                    /> */}
+                    <EarthCanvas />
                 </div>
             </div>
         </section>

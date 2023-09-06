@@ -14,7 +14,7 @@ import ParticleContainer from '@/components/ParticleContainer'
 export default function Home() {
     return (
         <main>
-            <ParticleContainer />
+            {/* <ParticleContainer /> */}
 
             <Header />
             <div className="flex flex-col md:gap-[150px] ">
