@@ -8,7 +8,6 @@ const About = () => {
     const { language } = useLanguage()
     const [t3Formatted, setT3Formatted] = useState(about[language].t3)
 
-    // Verifica se o idioma foi alterado e formata o texto novamente com a classe de decoração
     useEffect(() => {
         const regex = new RegExp('(Jonatan)', 'g')
         const regex1 = new RegExp('(React)', 'g')
@@ -52,7 +51,7 @@ const About = () => {
                             {about[language].t2}
                         </h3>
                     </div>
-                    <div className="text-sm font-normal leading-loose text-secondary  space-y-2">
+                    <div className="text-sm font-normal leading-loose text-secondary space-y-2">
                         <p
                             dangerouslySetInnerHTML={{ __html: t3Formatted }}
                         ></p>

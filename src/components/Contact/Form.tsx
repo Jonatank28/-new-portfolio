@@ -23,7 +23,6 @@ const Form = () => {
     const [sendMessage, setSendMessage] = useState<SendMessage | null>(null)
     const { language } = useLanguage()
     const { resolvedTheme } = useTheme()
-    console.log('🚀 ~ resolvedTheme:', resolvedTheme)
 
     const {
         register,

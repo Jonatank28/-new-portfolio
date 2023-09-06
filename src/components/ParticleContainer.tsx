@@ -7,14 +7,11 @@ import { useTheme } from 'next-themes'
 const ParticleContainer = () => {
     const { resolvedTheme } = useTheme()
     const particlesInit = useCallback(async (engine: Engine) => {
-        console.log(engine)
         await loadSlim(engine)
     }, [])
 
     const particlesLoaded = useCallback(
-        async (container: Container | undefined) => {
-            await console.log(container)
-        },
+        async (container: Container | undefined) => {},
         []
     )
     return (
@@ -62,17 +59,17 @@ const ParticleContainer = () => {
                         color: {
                             value:
                                 resolvedTheme === 'dark'
-                                    ? '#4F5259'
-                                    : '#000000',
+                                    ? '#c1c1c1'
+                                    : '#b1b1b1',
                         },
                         links: {
                             color:
                                 resolvedTheme === 'dark'
                                     ? '#4F5259'
-                                    : '#000000',
+                                    : '#c1c1c1',
                             distance: 150,
                             enable: true,
-                            opacity: 0.1,
+                            opacity: 0.5,
                             width: 1,
                         },
                         move: {
@@ -82,7 +79,7 @@ const ParticleContainer = () => {
                                 default: 'bounce',
                             },
                             random: false,
-                            speed: 2,
+                            speed: 1,
                             straight: false,
                         },
                         number: {
